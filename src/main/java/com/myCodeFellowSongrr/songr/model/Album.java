@@ -1,9 +1,17 @@
 package com.myCodeFellowSongrr.songr.model;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.net.URL;
-
+@Entity
 public class Album {
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+long id;
     public String title;
     public String artist;
     public int songCount;
@@ -17,7 +25,6 @@ public class Album {
         this.lengthInSeconds = lengthInSeconds;
         this.imageURL = imageURL;
     }
-
     public String getTitle() {
         return title;
     }
